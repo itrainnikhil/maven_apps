@@ -34,10 +34,6 @@ node {
    }
    stage('Deploy to Test'){
        echo 'Deploy to Test environment'
-   }
-   stage('Deploy to Prod'){
-       echo 'Deploy to Prod environment'
-   }
-      
+   }      
    
 }
