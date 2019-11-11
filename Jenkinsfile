@@ -9,22 +9,17 @@ node {
        sh 'mvn clean compile'
      }
    }
-   stage('Code Analysis') {
-      //withSonarQubeEnv('SonarQube') {
-         //withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
-             //sh 'mvn clean package sonar:sonar' 
-             
-          //   sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar' +
-           //  ' -Dsonar.host.url=https://sonarcloud.io ' +
-            // ' -Dsonar.organization=itrainavengers ' +
-            // ' -Dsonar.login=c9515e84f9117ab6e598d26c34877938f72481a6 '   
-         //}
-       //withSonarQubeEnv('SonarQube') {
-           //sh 'mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
-           //sh 'mvn clean package sonar:sonar'
-           
-      //}
-   }
+   stage('code analysis') { 
+            steps {
+                withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+               sh 'mvn sonar:sonar \
+                    -Dsonar.projectKey=maven-nikhil \
+                    -Dsonar.organization=itrainnikhil \
+                    -Dsonar.host.url=https://sonarcloud.io \
+                    -Dsonar.login=52e9e505fcec884b91de3535c078f1dcbc552b95'
+             }  
+            }
+        }
     
     
    stage('Artifacts') {
