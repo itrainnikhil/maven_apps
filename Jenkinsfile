@@ -29,7 +29,7 @@ pipeline {
                     -Dsonar.projectKey=maven-nikhil \
                     -Dsonar.organization=itrainnikhil \
                     -Dsonar.host.url=https://sonarcloud.io \
-                    -Dsonar.login=52e9e505fcec884b91de3535c078f1dcbc552b95''
+                    -Dsonar.login=52e9e505fcec884b91de3535c078f1dcbc552b95'
              }  
             }
         }
